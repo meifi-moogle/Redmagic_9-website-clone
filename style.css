@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Monda:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+:root {
+    --fs-s: .9rem;
+    --fs-m: 1rem;
+    --fs-l: 1.2rem;
+    --fs-xl: 2.4rem;
+    --fs-xxl: 3.7rem;
+
+    --fs-percentage: 3rem;
+}
+
+@media (width < 1050px) {
+    :root {
+    --fs-xl: 2rem;
+    --fs-xxl: 3.3rem;
+    --fs-percentage: 2rem;
+    }
+}
+
+@media (width < 800px) {
+    :root {
+    --fs-xl: 2rem;
+    --fs-xxl: 2.3rem;
+    }
+}
+
+@media (width < 660px) {
+    :root {
+        --fs-m: .9rem;
+        --fs-l: 1rem;
+        --fs-xl: 1.5rem;
+        --fs-xxl: 2rem;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+[class*="img-"],
+video {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    font-style: italic;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: clip;
+}
+
+.navbar-links li {list-style: none; }
+.navbar-links li a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+}
+
+
+
+body {
+    font-family: 'Monda', sans-serif;
+    background-color: black;
+    color: white;
+    font-size: var(--fs-m);
+}
+
+.text-red { color: #ff003d; }
+
+
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin-top: 1rem;
+    color: white;
+}
+@media (width < 600px) { .navbar { display: none; } }
+
+.navbar-links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li a:hover {
+    background-color: #ff003d;
+    padding: .5rem 1rem;
+    border-radius: 28px;
+}
+
+
+
+
+
+/* Design Section  */
+
+.design {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+}
+@media (width < 1000px) {
+    .design {grid-template-columns: 1fr 1fr; }
+    .left-text {display: none; }
+}
+
+.left-text {
+    padding-left: 4rem;
+}
+
+.img-phone {
+    transform: rotate(-10deg);
+    border: 1px solid red;
+}
+
+.flex-img-text {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+
+
+
+
+
