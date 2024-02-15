@@ -45,7 +45,7 @@
     padding: 0;
 }
 
-[class*="img-"],
+[class*="img-"], img, 
 video {
     max-width: 100%;
     height: auto;
@@ -68,11 +68,25 @@ video {
 body {
     font-family: 'Monda', sans-serif;
     background-color: black;
+    /* background-color: pink; */
     color: white;
     font-size: var(--fs-m);
 }
 
 .text-red { color: #ff003d; }
+
+/* Using Grid to Stack Content with Images */
+.stacked {
+    display: grid;
+}
+.stacked > * {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+}
+.stacked > .img-grid {
+    z-index: -1;
+}
+
 
 
 
@@ -128,6 +142,71 @@ body {
     align-items: center;
     gap: 1.5rem;
 }
+
+
+
+.img-highlight-1 { background-image: url("./images/highlight-1.webp"); }
+.img-highlight-2 { background-image: url("./images/highlight-2.webp"); }
+.img-highlight-3 { background-image: url("./images/highlight-3.webp"); }
+.img-highlight-4 { background-image: url("./images/highlight-4.webp"); }
+.img-highlight-5 { background-image: url("./images/highlight-5.webp"); }
+.img-highlight-6 { background-image: url("./images/highlight-6.webp"); }
+.img-highlight-7 { background-image: url("./images/highlight-7.webp"); }
+
+/* Highlights Section  */
+
+.img-grid {
+    background-position: center;
+    padding-block: 37%;
+}
+
+.highlights .stacked, .highlight-small { border: 1px solid white; }
+
+.highlights {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-inline: auto;
+    margin-top: 4rem;
+}
+
+.highlights .row {
+    display: flex;
+    flex-direction: column;
+}
+.small-highlights-flex {display: flex;}
+
+
+.row-1 { width: 29.25%; }
+
+.row-2 { width: 39%; }
+
+.row-3 { width: 29.25%; }
+
+.highlight-small { width: 50%; }
+
+.stacked p {
+    margin-top: auto;
+    padding-left: 1rem;
+}
+
+@media (width < 950px) { .row { width: 90%; }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
