@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
 :root {
+    --fs-xs: .8rem;
     --fs-s: .9rem;
     --fs-m: 1rem;
     --fs-l: 1.2rem;
@@ -28,6 +29,7 @@
 
 @media (width < 660px) {
     :root {
+        --fs-xs: .7rem;
         --fs-m: .9rem;
         --fs-l: 1rem;
         --fs-xl: 1.5rem;
@@ -75,7 +77,6 @@ video {
 }
 
 
-
 body {
     font-family: 'Monda', sans-serif;
     background-color: black;
@@ -83,15 +84,19 @@ body {
     font-size: var(--fs-m);
 }
 
-.text-red {
-    color: #ff003d;
-}
-.fs-xl {
-    font-size: var(--fs-xl);
-}
-.fs-xxl {
-    font-size: var(--fs-xxl);
-}
+/* General styles  */
+.text-red { color: #ff003d; }
+
+.fs-xl { font-size: var(--fs-xl); }
+
+.fs-xxl { font-size: var(--fs-xxl); }
+
+.fs-s { font-size: var(--fs-s); }
+
+.text-small { font-size: var(--fs-xs); }
+
+h2 { margin-bottom: .5rem; }
+
 
 /* Using Grid to Stack Content with Images */
 .stacked {
@@ -103,8 +108,8 @@ body {
     grid-row: 1 / -1;
 }
 
-.stacked > .img-grid,
-.stacked > img {
+.stacked>.img-grid,
+.stacked>img {
     z-index: -1;
 }
 
@@ -116,7 +121,6 @@ body {
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    margin-top: 1rem;
     margin-bottom: 5rem;
     color: white;
 }
@@ -138,7 +142,6 @@ body {
     padding: .5rem 1rem;
     border-radius: 28px;
 }
-
 
 
 
@@ -175,10 +178,18 @@ body {
 
 .phone-img-wrapper {
     transform: rotate(-15deg);
-    display: grid;
+    /* display: grid; */
 }
 
-.img-phone {margin-left: 10%; }
+@media (width < 600px) {
+    .phone-img-wrapper {
+        margin-top: 6rem;
+    }
+}
+
+.img-phone {
+    margin-left: 10%;
+}
 
 .img-phone-2 {
     margin-left: 50%;
@@ -190,7 +201,23 @@ body {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    line-height: 2.5;
+    cursor: pointer;
 }
+
+.active {
+    transform: scale(1.1);
+}
+.active-border {
+    border: 1px solid #ff003d;
+}
+.inactive {
+    transform: scale(1);
+    color: rgb(126, 126, 126);
+    border: none;
+}
+
+
 
 
 
@@ -299,7 +326,12 @@ body {
     overflow-x: clip;
     position: relative;
 }
-@media (width < 600px) {.header-01 {height: 12vh; }}
+
+@media (width < 600px) {
+    .header-01 {
+        height: 12vh;
+    }
+}
 
 
 .header-01 .title-one {
@@ -309,7 +341,10 @@ body {
 }
 
 /* Draw a line on the left  */
-.section-01 {position: relative; }
+.section-01 {
+    position: relative;
+}
+
 .section-01::before {
     content: '';
     position: absolute;
@@ -321,6 +356,12 @@ body {
     background-color: rgb(141, 141, 141);
 }
 
+@media (width < 700px) {
+    .section-01::before {
+        display: none;
+    }
+}
+
 .section-01::after {
     content: '';
     height: 6rem;
@@ -330,8 +371,14 @@ body {
     top: 16rem;
     left: 1.5rem;
 }
-@media (width < 700px) {.section-01::after {display: none; }}
-    /* And in the text  */
+
+@media (width < 700px) {
+    .section-01::after {
+        display: none;
+    }
+}
+
+/* And in the text  */
 .deco-number {
     font-family: 'Orbitron', sans-serif;
     font-size: 1rem;
@@ -360,7 +407,7 @@ body {
     content: '';
     width: 1px;
     height: 11.9rem;
-    background-color:rgb(141, 141, 141);
+    background-color: rgb(141, 141, 141);
     position: absolute;
     top: -1.8rem;
     left: -2rem;
@@ -386,11 +433,15 @@ body {
     padding-bottom: 1rem;
     /* margin-left: 5%; */
 }
-@media (width > 700px) { .flex-text { gap: 15rem; } }
+
+@media (width > 700px) {
+    .flex-text {
+        gap: 15rem;
+    }
+}
 
 
 .flex-text div {
-    font-size: var(--fs-xl);
     line-height: 1.2;
 }
 
@@ -409,9 +460,18 @@ body {
 } */
 
 @media (width < 700px) {
-    .header-01 .title-one { margin-left: 0; }
-    .flex-gap div::before {display: none; }
-    .svg-chip-text-deco {width: 40vw; }
+    .header-01 .title-one {
+        margin-left: 0;
+    }
+
+    .flex-gap div::before {
+        display: none;
+    }
+
+    .svg-chip-text-deco {
+        width: 40vw;
+    }
+
     .flex-text {
         flex-direction: column;
         margin-left: 0;
@@ -425,7 +485,11 @@ body {
 
 /* Body 01 Section  */
 
-@media (width > 800px) { .body-01 { grid-template-columns: 2fr 1fr; } }
+@media (width > 800px) {
+    .body-01 {
+        grid-template-columns: 2fr 1fr;
+    }
+}
 
 .body-01 {
     display: grid;
@@ -468,15 +532,14 @@ body {
     left: -3rem;
 }
 
-.svg-text-flex  div {
+.svg-text-flex div {
     font-size: var(--fs-percentage);
     line-height: 1.4;
 }
 
 .performance {
-    font-size: var(--fs-s);
     color: rgb(186, 186, 186);
-}   
+}
 
 @media (width < 800px) {
     .gpu-group-flex {
@@ -489,7 +552,9 @@ body {
         left: 4.5rem;
     }
 
-    .performance {font-size: .7rem; }
+    .performance {
+        font-size: .7rem;
+    }
 }
 
 @media (width > 1600px) {
@@ -504,27 +569,47 @@ body {
     display: grid;
     border: 1px solid rgb(141, 141, 141);
 }
-@media (width > 800px) { .body-01-p2 {grid-template-columns: 1fr 1fr }}
+
+@media (width > 800px) {
+    .body-01-p2 {
+        grid-template-columns: 1fr 1fr
+    }
+}
 
 
-.left-wrapper p, .right-wrapper p {line-height: 1.4;  position: relative; }
+.left-wrapper p,
+.right-wrapper p {
+    line-height: 1.6;
+    position: relative;
+}
 
-.left-wrapper h2, .right-wrapper h2 {padding-top: 2rem; }
+.left-wrapper h2,
+.right-wrapper h2 {
+    padding-top: 2rem;
+}
 
 
-.left-wrapper, .right-wrapper {
+.left-wrapper,
+.right-wrapper {
     min-width: 50%;
     padding: 2.5rem;
 }
 
 
-.left-wrapper { 
-    margin-bottom: 4rem; 
+.left-wrapper {
+    margin-bottom: 4rem;
     border-right: 1px solid rgb(141, 141, 141);
     /* border-bottom: 1px solid rgb(141, 141, 141); */
 }
+.left-wrapper .text-small{ margin-top: 1rem; color: rgb(213, 213, 213); }
 
-.right-wrapper  { 
+@media (width < 800px) {
+    .left-wrapper {
+        margin-bottom: -2rem;
+    }
+}
+
+.right-wrapper {
     margin-top: 4rem;
     border-top: 1px solid rgb(141, 141, 141);
     border-left: 1px solid rgb(141, 141, 141);
@@ -536,9 +621,10 @@ body {
 
 
 
-.design, .header-01 .title-one, 
- .flex-text,
-  .body-01-p2 {
+.design,
+.header-01 .title-one,
+.flex-text,
+.body-01-p2 {
     margin-inline: 5%;
 }
 
