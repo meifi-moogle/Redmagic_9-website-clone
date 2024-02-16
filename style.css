@@ -79,7 +79,6 @@ video {
 body {
     font-family: 'Monda', sans-serif;
     background-color: black;
-    /* background-color: pink; */
     color: white;
     font-size: var(--fs-m);
 }
@@ -161,7 +160,7 @@ body {
 }
 
 .left-text {
-    padding-left: 4rem;
+    /* padding-left: 4rem; */
 }
 
 .img-phone {
@@ -273,7 +272,6 @@ body {
     line-height: 1;
     margin-top: 6rem;
     margin-bottom: 3rem;
-    padding-left: 2rem;
     border-top: 1px solid rgb(141, 141, 141);
     border-bottom: 1px solid rgb(141, 141, 141);
     display: flex;
@@ -281,16 +279,39 @@ body {
     justify-content: space-between;
     background-color: #131313;
     overflow-x: clip;
+    position: relative;
 }
 @media (width < 600px) {.header-01 {height: 12vh; }}
 
 
 .header-01 .title-one {
     min-width: 60%;
-    margin-left: 5%;
+    /* margin-left: 5%; */
     padding-right: 4rem;
 }
 
+/* Draw a line on the left  */
+.section-01 {position: relative; }
+.section-01::before {
+    content: '';
+    position: absolute;
+    top: 11.9rem;
+    left: 1.5rem;
+    width: 1px;
+    height: 100%;
+    background-color: rgb(141, 141, 141);
+}
+
+.section-01::after {
+    content: '';
+    height: 6rem;
+    width: 6px;
+    background-color: #ff003d;
+    position: absolute;
+    top: 16rem;
+    left: 1.5rem;
+}
+    /* And in the text  */
 .deco-number {
     font-family: 'Orbitron', sans-serif;
     font-size: 1rem;
@@ -341,9 +362,9 @@ body {
 
 .flex-text {
     display: flex;
-    padding-inline: 2rem;
+    /* padding-inline: 2rem; */
     padding-bottom: 1rem;
-    margin-left: 5%;
+    /* margin-left: 5%; */
 }
 @media (width > 700px) { .flex-text { gap: 15rem; } }
 
@@ -353,7 +374,7 @@ body {
     line-height: 1.2;
 }
 
-.flex-gap div { position: relative;}
+/* .flex-gap div { position: relative;}
 
 .flex-gap div::before {
     content: '';
@@ -362,9 +383,10 @@ body {
     background-color: red;
     position: absolute;
     bottom: -2rem;
-    left: -.9rem;
+    left: -3rem;
+
     margin-top: auto;
-}
+} */
 
 @media (width < 700px) {
     .header-01 .title-one { margin-left: 0; }
@@ -381,35 +403,39 @@ body {
 
 
 
-
-
+/* Body 01 Section  */
 
 @media (width > 800px) { .body-01 { grid-template-columns: 2fr 1fr; } }
+
 .body-01 {
     display: grid;
-    place-items: center;
+    /* place-items: center; */
     padding-bottom: 4rem;
-    /* margin-inline: 5%; */
-    border: 1px solid rgb(143, 143, 143);
+    margin-left: 5%;
+    /* border: 1px solid rgb(143, 143, 143); */
+    border-top: 1px solid rgb(143, 143, 143);
+    border-bottom: 1px solid rgb(143, 143, 143);
+    border-left: 1px solid rgb(143, 143, 143);
     position: relative;
 }
 
+.body-01::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 5.25%;
+    background-color: rgb(141, 141, 141);
+    width: 1px;
+    height: 100%;
+}
 
 .gpu-group-flex {
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
     margin-top: 5%;
+    margin-left: 4rem;
 }
-/* .gpu-group-flex::after {
-    content: '';
-    position: absolute;
-    width: 1px;
-    height: 100%;
-    background-color: rgb(141, 141, 141);
-    top: 0;
-    right: 10%;
-} */
 
 .svg-text-flex {
     display: flex;
@@ -446,6 +472,10 @@ body {
     .performance {font-size: .7rem; }
 }
 
+@media (width > 1600px) {
+    /* Bigger font size for the info  */
+}
+
 
 
 
@@ -471,7 +501,7 @@ body {
 .left-wrapper { 
     margin-bottom: 4rem; 
     border-right: 1px solid rgb(141, 141, 141);
-    border-bottom: 1px solid rgb(141, 141, 141);
+    /* border-bottom: 1px solid rgb(141, 141, 141); */
 }
 
 .right-wrapper  { 
@@ -480,4 +510,18 @@ body {
     border-left: 1px solid rgb(141, 141, 141);
     margin-left: -1px;
     position: relative;
+}
+
+
+
+
+
+.design, .header-01 .title-one, 
+ .flex-text,
+  .body-01-p2 {
+    margin-inline: 5%;
+}
+
+.highlights {
+    margin-inline: 3.45rem;
 }
