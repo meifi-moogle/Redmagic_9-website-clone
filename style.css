@@ -214,7 +214,7 @@ body {
 
 .highlights .stacked,
 .highlight-small {
-    border: 1px solid white;
+    border: 1px solid rgb(141, 141, 141);
 }
 
 .highlights {
@@ -389,8 +389,9 @@ body {
     display: grid;
     place-items: center;
     padding-bottom: 4rem;
-    /* margin-left: 5%; */
+    /* margin-inline: 5%; */
     border: 1px solid rgb(143, 143, 143);
+    position: relative;
 }
 
 
@@ -400,6 +401,15 @@ body {
     gap: 2.5rem;
     margin-top: 5%;
 }
+/* .gpu-group-flex::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background-color: rgb(141, 141, 141);
+    top: 0;
+    right: 10%;
+} */
 
 .svg-text-flex {
     display: flex;
@@ -434,4 +444,40 @@ body {
     }
 
     .performance {font-size: .7rem; }
+}
+
+
+
+
+
+.body-01-p2 {
+    display: grid;
+    border: 1px solid rgb(141, 141, 141);
+}
+@media (width > 800px) { .body-01-p2 {grid-template-columns: 1fr 1fr }}
+
+
+.left-wrapper p, .right-wrapper p {line-height: 1.4;  position: relative; }
+
+.left-wrapper h2, .right-wrapper h2 {padding-top: 2rem; }
+
+
+.left-wrapper, .right-wrapper {
+    min-width: 50%;
+    padding: 2.5rem;
+}
+
+
+.left-wrapper { 
+    margin-bottom: 4rem; 
+    border-right: 1px solid rgb(141, 141, 141);
+    border-bottom: 1px solid rgb(141, 141, 141);
+}
+
+.right-wrapper  { 
+    margin-top: 4rem;
+    border-top: 1px solid rgb(141, 141, 141);
+    border-left: 1px solid rgb(141, 141, 141);
+    margin-left: -1px;
+    position: relative;
 }
