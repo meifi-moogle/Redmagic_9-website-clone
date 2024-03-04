@@ -131,9 +131,7 @@ h2 { margin-bottom: .5rem; }
 }
 
 .navbar-links li a:hover, .navbar-links li a:focus {
-    background-color: #ff003d;
-    padding: .5rem 1rem;
-    border-radius: 28px;
+    color: #ff003d;
 }
 
 .navbar-links li {
@@ -487,6 +485,10 @@ h2 { margin-bottom: .5rem; }
 }
 
 .performance {color: rgb(186, 186, 186);}
+
+@media (width < 1050px) and (width > 800px) {
+    .gpu-group-flex {margin-right: 3.5rem;}
+}
 
 @media (width < 800px) {
     .gpu-group-flex {
